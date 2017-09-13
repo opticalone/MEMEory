@@ -162,16 +162,26 @@ void printPlaylist(const Playlist& pl)
 	}
 }
 
+void dePlaylist(Playlist &pl)
+{
+	
+	for (int i = 0; i < pl.trackCount; i++)
+	{
+		if (pl.trackList[i].trackName != "")
+		{
+			cout << pl.trackList[i].trackName;
 
-
+		}
+	}
+}
 
 
 int main()
 {
 
-	Track bootysweat2 = { "B00ty Sw34T II", 4.20f };
-	Track bootysweat3 = { "B00ty Sw34T III", 4.20f };
-	Track bootysweat4 = { "B00ty Sw34T IIII ft.DANKNUGZ", 4.20f };
+	Track bootysweat2 = { "B00ty Sw3aT II ft.DANKNUGZ", 4.20f };
+	Track bootysweat3 = { "B00ty Sw3aT III ft.DANKNUGZ", 4.20f };
+	Track bootysweat4 = { "B00ty Sw3aT IIII ft.DANKNUGZ ReLoaDEd", 4.20f };
 
 	Track trackList[3];
 	trackList[0] = bootysweat2;
