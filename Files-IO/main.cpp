@@ -1,38 +1,66 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "monster.h"
 
 using std::string;
 using std::fstream;
 using namespace std;
-
-int main()
+void main()
 {
-	cout << "ch00se ph1l3 ppl0x?" << endl;
-	cout << endl;
+	
+	std::string inputBuffer;
 
-fstream file;
-string f = "";
-cin >> f;
 
-file.open(f);
+	std::cout << "where would you like to save this?" << std::endl;
+	std::cin >> inputBuffer;
 
-if (file.fail())
-{
-	cout << "not found" << endl;
-	return -1;
+	std::fstream proData;
+	proData.open(inputBuffer.c_str(), std::ios_base::out);
+
+	if (proData.fail())
+	{
+		std::cout << "nope" << std::endl;
+		return;
+	}
+
+	cin.ignore(1000, '\n');
+
+	std::cout << "Who are you?" << std::endl;
+	std::cin >> inputBuffer;
+	proData << inputBuffer;
+
+	std::cout << "how old are you?" << std::endl;
+	std::cin >> inputBuffer;
+	proData << inputBuffer;
+	std::cout << "whats your fav color??" << std::endl;
+	std::cin >> inputBuffer;
+	proData << inputBuffer;
+
+	proData.flush();
+	proData.close();
+
+	std::cout << "thanks" << std::endl;
+
+
 }
 
-//Reading
-string buffer;
-while (std::getline(file, buffer))
+void monster()
 {
-	cout << buffer << endl;
-}
-	while (true) {}
-}
+	fstream entStream;
+	entStream.open("monsters.txt");
+
+	if (entStream.fail())
+	{
+		std::cout << "nope" << std::endl;
+		return;
+	}
+	int entCount = 0;
+	Entity entities[100];
 
 
+
+}
 
 
 
